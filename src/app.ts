@@ -1,6 +1,7 @@
 import dotenv from 'dotenv'
 import express, { response } from 'express'
 import path from 'path'
+import fetch from 'node-fetch'
 
 // ------ Setup ------
 dotenv.config()
@@ -14,8 +15,11 @@ app.use(express.static(path.join(__dirname, 'public')))
 //#endregion
 
 //#region Routes
-app.get('/', (req, res) => {
-  res.render('default')
+app.get('/', async (req, res) => {
+  const response = await fetch(`http://localhost:${port}/art-and-credits.json`)
+  const json = await response.json()
+
+  res.render('default', json)
 })
 
 // Handle 404

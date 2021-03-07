@@ -12,8 +12,10 @@
     "copy-css": "cd \"src/public/stylesheets\" && copyfiles -V \"*.css\" ../../../build/public/stylesheets/"
   },
   "dependencies": {
+    "@types/node-fetch": "^2.5.8",
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
+    "node-fetch": "^2.6.1",
     "pug": "^3.0.2"
   },
   "devDependencies": {

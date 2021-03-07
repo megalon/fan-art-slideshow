@@ -4,5 +4,13 @@ html
     title Fan Art Slideshow
     meta(name="viewport" content="width=device-width, initial-scale=1")
     script(src='https://use.fontawesome.com/releases/v5.1.0/js/all.js')
+    link(rel='stylesheet', href='/stylesheets/main.css')
   body
-    a(class="title" href="/")= "Fan Art Slideshow!"
+    h1="Fan Art Slideshow!"
+    table
+      each file in artwork
+        tr
+          td
+            h2=file.artist
+            p=file.filepath
+            img(class="slideshow-img" src=file.filepath)
