@@ -5,12 +5,13 @@ html
     meta(name="viewport" content="width=device-width, initial-scale=1")
     script(src='https://use.fontawesome.com/releases/v5.1.0/js/all.js')
     link(rel='stylesheet', href='/stylesheets/main.css')
+    script(src='/scripts/slideshow.js')
   body
     h1="Fan Art Slideshow!"
-    table
+    div#slideshow
       each file in artwork
-        tr
-          td
+        div.slide
+          div.credit
             h2=file.artist
-            p=file.filepath
-            img(class="slideshow-img" src=file.filepath)
+            //p=file.filepath
+          img(class="slide-img" src=file.filepath)

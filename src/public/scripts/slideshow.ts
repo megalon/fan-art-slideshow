@@ -1,12 +1,20 @@
 console.log('Loaded slideshow page')
 
-let requestURL = './art-and-credits.json'
-let request = new XMLHttpRequest()
-request.open('GET', requestURL)
-request.responseType = 'json'
-request.send()
+const interval = 2500
 
-request.onload = () => {
-  const artwork = request.response
-  console.log(artwork)
-}
+// Timeout to wait for page to load
+setTimeout(() => {
+  const slides = document.getElementsByClassName('slide')
+
+  console.log(slides)
+  console.log(slides[0])
+
+  let i = 0
+  slides[i].classList.add('active')
+
+  setInterval(() => {
+    slides[i++].classList.remove('active')
+    if (i >= slides.length) i = 0
+    slides[i].classList.add('active')
+  }, interval)
+}, 100)

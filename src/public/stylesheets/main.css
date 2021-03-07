@@ -1,4 +1,25 @@
-.slideshow-img {
+* {
+  font-family: 'Lato', Arial, Helvetica, sans-serif;
+}
+
+.slide {
+  display: none;
+}
+
+.slide.active {
+  display: block;
+}
+
+.slide-img {
   width: auto;
   height: 500px;
+}
+
+.slide .credit {
+  position: absolute;
+  margin: 0;
+  padding: 0 20px 0 20px;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  border-radius: 4px;
 }
