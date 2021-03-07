@@ -6,14 +6,19 @@
   "license": "MIT",
   "scripts": {
     "dev": "tsc-watch --onFailure \"echo Compilation Failed\"",
-    "lint": "tslint -c tslint.json 'src/**/*.ts'"
+    "lint": "tslint -c tslint.json 'src/**/*.ts'",
+    "copy": "yarn copy-pug && yarn copy-css",
+    "copy-pug": "cd \"src/views\" && copyfiles -V \"*.pug\" ../../build/views/",
+    "copy-css": "cd \"src/public/stylesheets\" && copyfiles -V \"*.css\" ../../../build/public/stylesheets/"
   },
   "dependencies": {
     "dotenv": "^8.2.0",
-    "express": "^4.17.1"
+    "express": "^4.17.1",
+    "pug": "^3.0.2"
   },
   "devDependencies": {
     "@types/express": "^4.17.11",
+    "copyfiles": "^2.4.1",
     "nodemon": "^2.0.7",
     "tsc-watch": "^4.2.9",
     "typescript": "^4.2.3"
