@@ -7,20 +7,21 @@ dotenv.config()
 const app = express()
 const port: string = process.env.PORT as string
 
-// Config express
+//#region Config express
+app.set('views', path.join(__dirname, 'views'))
+app.set('view engine', 'pug')
 app.use(express.static(path.join(__dirname, 'public')))
+//#endregion
 
 //#region Routes
-//#region GET
 app.get('/', (req, res) => {
-  res.send('Test!')
+  res.render('default')
 })
 
 // Handle 404
 app.use((req, res) => {
   res.redirect('/')
 })
-//#endregion
 //#endregion
 
 // Start server
