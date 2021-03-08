@@ -6,6 +6,7 @@
   "license": "MIT",
   "scripts": {
     "dev": "tsc-watch --onFailure \"echo Compilation Failed\"",
+    "build": "tsc && yarn copy",
     "lint": "tslint -c tslint.json 'src/**/*.ts'",
     "copy": "yarn copy-pug && yarn copy-css",
     "copy-pug": "cd \"src/views\" && copyfiles -V \"*.pug\" ../../build/views/",
