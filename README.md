@@ -25,6 +25,7 @@ To add more artists, simply create a new directory and drop their artwork in the
 1. Open a shell in the project directory
 1. Install packages with `yarn`
 1. Copy `example.env` to `.env` and fill out the information
+1. `yarn build` to initialize files
 
 ## .env explaination
 
@@ -33,7 +34,11 @@ To add more artists, simply create a new directory and drop their artwork in the
 | PORT  | Port number. EX: `1234` |
 | NODE_ENV  | `development` or `production` |
 
-## Watch files for changes
+## File changes
+
+Views and stylesheets do not need to be "built", but the do need to be in the build folder.
+You can use `yarn copy` for this.
+
 Recompile TS files on change using the command below
 
 1. `yarn dev`
