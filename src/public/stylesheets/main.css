@@ -1,25 +1,36 @@
 * {
-  font-family: 'Lato', Arial, Helvetica, sans-serif;
+  font-family: 'Teko Bold', Arial, Helvetica, sans-serif;
+}
+
+#slideshow {
+  display: flex;
+  justify-content: center;
 }
 
 .slide {
-  display: none;
+  display: flex;
+  justify-content: right;
+  text-align: right;
+  transition: opacity 1.5s;
+  position: absolute;
+  opacity: 0;
 }
 
-.slide.active {
-  display: block;
+.slide.fadeIn {
+  opacity: 1;
 }
 
 .slide-img {
   width: auto;
-  height: 500px;
+  height: 720px;
 }
 
 .slide .credit {
   position: absolute;
+  top: 10px;
+  right: 0px;
   margin: 0;
   padding: 0 20px 0 20px;
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgba(0, 0, 0, 0.25);
   color: white;
-  border-radius: 4px;
 }

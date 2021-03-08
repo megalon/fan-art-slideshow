@@ -1,20 +1,35 @@
 console.log('Loaded slideshow page')
 
-const interval = 2500
+const interval = 5000
+
+let currentIndex = -1
 
 // Timeout to wait for page to load
 setTimeout(() => {
   const slides = document.getElementsByClassName('slide')
-
-  console.log(slides)
-  console.log(slides[0])
-
-  let i = 0
-  slides[i].classList.add('active')
-
+  slideShow(slides)
   setInterval(() => {
-    slides[i++].classList.remove('active')
-    if (i >= slides.length) i = 0
-    slides[i].classList.add('active')
+    slideShow(slides)
   }, interval)
 }, 100)
+
+function slideShow(slides: HTMLCollectionOf<Element>) {
+  // Skip fading out first image
+  if (currentIndex >= 0) {
+    fadeOut(slides[currentIndex])
+  }
+  currentIndex++
+  if (currentIndex >= slides.length) {
+    currentIndex = 0
+  }
+
+  fadeIn(slides[currentIndex])
+}
+
+function fadeIn(e: Element) {
+  e.classList.add('fadeIn')
+}
+
+function fadeOut(e: Element) {
+  e.classList.remove('fadeIn')
+}
